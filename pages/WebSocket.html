@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>SOAP API</title>
+</head>
+
+<body>
+    <header>
+        <button id="dropdownBtn"><i class="fa-solid fa-bars"></i></button>
+        <h1 id='name'><a href="index.html" id="index">Использование API сервисов при разработке сайтов</a></h1>
+        <nav class="nav">
+            <a href="https://vk.com/shnastya_0" class="nav-icon" target="_blank"><i class="fa-brands fa-vk"></i></a>
+            <a href="https://github.com/AnastasiaShasheva" class="nav-icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="three columns sidebar">
+                <h2>Навигация</h2>
+                <ul>
+                    <li><a href="index.html">Что такое API?</a></li>
+                        <li><a href="interface.html">Интерфейс?</a></li>
+                        <li><a href="types.html">Типы API</a></li>
+                        <li><a href="REST.html">REST API</a></li>
+                        <li><a href="SOAP.html">SOAP API</a></li>
+                        <li><a href="GraphQL.html">GraphQL</a></li>
+                        <li><a href="WebSocket.html">WebSocket</a></li>
+                        <li><a href="table.html">Сервисы с API</a></li>
+                        <li><a href="video.html">Видео про API</a></li>
+                </ul>
+            </div>
+
+            <div class="nine columns main-content">
+                <h2>WebSocket API</h2>
+
+                <div>
+                    WebSocket API — это протокол, который обеспечивает взаимодействие между клиентом и сервером в реальном времени. Он был разработан для улучшения эффективности и производительности веб-приложений, позволяя устанавливать постоянное двустороннее соединение. Это позволяет передавать данные без необходимости постоянно отправлять запросы от клиента к серверу, что снижает нагрузку и уменьшает задержки.
+                </div>
+
+                <h4>Основные принципы работы</h4>
+                <ul>
+                    <li>
+                        <span class="toggle">Создание соединения</span>
+                        <div class="info">WebSocket соединение устанавливается через HTTP-запрос, который затем апгрейдится в WebSocket протокол. Этот процесс называется "handshake". После успешного установления соединения создается постоянный канал связи.</div>
+                    </li>
+                    <li>
+                        <span class="toggle">Двусторонняя связь</span>
+                        <div class="info">В отличие от традиционных HTTP-запросов, которые являются односторонними (клиент запрашивает, сервер отвечает), WebSocket позволяет серверу отправлять данные клиенту в любое время. Это делает протокол идеальным для приложений, требующих постоянного обновления данных, таких как чаты, онлайн-игры или финансовые приложения.</div>
+                    </li>
+                    <li>
+                        <span class="toggle">Формат сообщений</span>
+                        <div class="info">Данные отправляются в виде кадров, и каждый кадр может содержать текст, бинарные данные или даже изображения. WebSocket поддерживает текстовые сообщения в формате UTF-8 и бинарные сообщения, такие как Blob и ArrayBuffer.</div>
+                    </li>
+                </ul>
+
+                <h4>Преимущества WebSocket</h4>
+                <ul>
+                    <li>
+                        <span>Снижение нагрузки и задержек:</span>
+                        <div>WebSocket уменьшает необходимость в постоянных HTTP-запросах, что снижает нагрузку на сервер и уменьшает время задержки при передаче данных.</div>
+                    </li>
+                    <li>
+                        <span>Повышенная производительность:</span>
+                        <div>За счет постоянного соединения WebSocket позволяет более эффективно использовать сетевые ресурсы и повышает общую производительность приложений.</div>
+                    </li>
+                    <li>
+                        <span>Поддержка многопользовательских приложений:</span>
+                        <div>WebSocket идеально подходит для приложений, требующих взаимодействия в реальном времени между пользователями. Например, это может быть онлайн-игра, где действия одного игрока должны мгновенно отображаться у остальных.</div>
+                    </li>
+                </ul>
+
+                <h4>Недостатки WebSocket</h4>
+                <ul>
+                    <li>
+                        <span>Безопасность:</span>
+                        <div>Хотя WebSocket имеет встроенные механизмы безопасности, такие как поддержка SSL/TLS через wss://, он все же уязвим для некоторых типов атак, таких как XSS (межсайтовые скрипты) и CSRF (межсайтовая подделка запросов).</div>
+                    </li>
+                    <li>
+                        <span>Совместимость:</span>
+                        <div>Не все браузеры поддерживают WebSocket, хотя большинство современных браузеров уже имеют такую возможность.</div>
+                    </li>
+                    <li>
+                        <span>Управление состоянием:</span>
+                        <div>При использовании WebSocket необходимо осторожно управлять состоянием соединения и обрабатывать возможные проблемы, такие как разрывы соединения и повторные попытки подключений.</div>
+                    </li>
+                </ul>
+
+                <h4>Примеры использования</h4>
+                <ul>
+                    <li>
+                        <span>Чат-приложения:</span>
+                        <div>WebSocket позволяет пользователям обмениваться сообщениями в реальном времени без задержек, что делает общение более интерактивным.</div>
+                    </li>
+                    <li>
+                        <span>Онлайн-игры:</span>
+                        <div>Игры, требующие мгновенного обмена данными между игроками, используют WebSocket для обеспечения плавного игрового процесса.</div>
+                    </li>
+                    <li>
+                        <span>Финансовые приложения:</span>
+                        <div>Приложения для отслеживания котировок акций или валют, где данные обновляются в режиме реального времени, минуя задержки.</div>
+                    </li>
+                </ul>
+
+                <div style="display: flex; justify-content: center;" id="button">
+                    <div>
+                        <a class="button button-primary" href="GraphQL.html" id="but">&lt; Предыдущая</a>
+                        <a class="button button-primary" href="table.html" id="but">Следующая &gt;</a>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container" id="footer">
+            <div class="row">
+                <div class="four columns bottom">
+                    <ul>
+                        <li class="footer"><a id="footer" href="index.html">Что такое API?</a></li>
+                        <li class="footer"><a id="footer" href="interface.html">При чем тут интерфейс?</a></li>
+                        <li class="footer"><a id="footer" href="types.html">Типы API</a></li>
+                    </ul>
+                </div>
+                <div class="four columns bottom">
+                    <ul>
+                        <li class="footer"><a id="footer" href="REST.html">REST API</a></li>
+                        <li class="footer"><a id="footer" href="SOAP.html">SOAP API</a></li>
+                        <li class="footer"><a id="footer" href="GraphQL.html">GraphQL</a></li>
+                    </ul>
+                </div>
+                <div class="four columns bottom">
+                    <ul id="footer">
+                        <li class="footer"><a id="footer" href="WebSocket.html">WebSocket</a></li>
+                        <li class="footer"><a id="footer" href="table.html">Сервисы с API</a></li>
+                        <li class="footer"><a id="footer" href="video.html">Видео про API</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>

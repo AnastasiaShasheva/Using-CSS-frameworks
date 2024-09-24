@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>REST API</title>
+</head>
+
+<body>
+    <header>
+        <button id="dropdownBtn"><i class="fa-solid fa-bars"></i></button>
+        <h1 id='name'><a href="index.html" id="index">Использование API сервисов при разработке сайтов</a></h1>
+        <nav class="nav">
+            <a href="https://vk.com/shnastya_0" class="nav-icon" target="_blank"><i class="fa-brands fa-vk"></i></a>
+            <a href="https://github.com/AnastasiaShasheva" class="nav-icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="three columns sidebar">
+                <h2>Навигация</h2>
+                <ul>
+                    <li><a href="index.html">Что такое API?</a></li>
+                        <li><a href="interface.html">Интерфейс?</a></li>
+                        <li><a href="types.html">Типы API</a></li>
+                        <li><a href="REST.html">REST API</a></li>
+                        <li><a href="SOAP.html">SOAP API</a></li>
+                        <li><a href="GraphQL.html">GraphQL</a></li>
+                        <li><a href="WebSocket.html">WebSocket</a></li>
+                        <li><a href="table.html">Сервисы с API</a></li>
+                        <li><a href="video.html">Видео про API</a></li>
+                </ul>
+            </div>
+
+            <div class="nine columns main-content">
+
+                <h2>GraphQL</h2>
+
+                <div>
+                    GraphQL — язык, в отличие от REST. С его помощью разработчик описывает взаимодействие клиента и сервера.
+                </div>
+
+                <div>
+                    В отличие от REST, в GraphQL всего одна точка взаимодействия (endpoint) с бэкендом. Т. е. неважно, что вы хотите запросить или изменить: клиент будет взаимодействовать с одной конечной точкой, одним URL.
+                </div>
+
+                <div>
+                    Основная часть GraphQL — схема (schema), которая описывает все типы, запросы и их взаимодействие, которые вы можете использовать в рамках текущего endpoint. Схема — не удобное дополнение, как, например, Swagger, а обязательная начальная точка проектирования любого GraphQL API. 
+                </div>
+
+                <div>
+                    Есть два типа операций: запросы (query) и мутации (mutation). Первые отвечают за получение данных, вторые — за их изменение.
+                </div>
+
+                <h4>Доступны базовые типы: </h4>
+
+                <ul>
+                    <li>ID: уникальный идентификатор объекта, реализован как String;</li>
+                    <li>String: строки, например, имя пользователя;</li>
+                    <li>Boolean: булевое значение (true / false);</li>
+                    <li>Int: целочисленное (1, 2, 3, …);</li>
+                    <li>Float: число с плавающей точкой (1.5);</li>
+                    <li>Enum: перечисления.</li>
+                </ul>
+
+                <div>
+                    Также можно описать собственные типы на основе базовых, пометить значения как обязательные или нет (знак «!» после указания типа), а также указать, что ожидается список, а не единичное значение (помечается скобками «[]»).
+                </div>
+
+                <div style="display: flex; justify-content: center;" id="button">
+                    <div>
+                        <a class="button button-primary" href="SOAP.html" id="but">
+                            &lt; Предыдущая</a>
+                                <a class="button button-primary" href="WebSocket.html" id="but">Следующая &gt;</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" id="footer">
+            <div class="row">
+                <div class="four columns bottom">
+                    <ul>
+                        <li class="footer"><a id="footer" href="index.html">Что такое API?</a></li>
+                        <li class="footer"><a id="footer" href="interface.html">При чем тут интерфейс?</a></li>
+                        <li class="footer"><a id="footer" href="types.html">Типы API</a></li>
+                    </ul>
+                </div>
+                <div class="four columns bottom">
+                    <ul>
+                        <li class="footer"><a id="footer" href="REST.html">REST API</a></li>
+                        <li class="footer"><a id="footer" href="SOAP.html">SOAP API</a></li>
+                        <li class="footer"><a id="footer" href="GraphQL.html">GraphQL</a></li>
+                    </ul>
+                </div>
+                <div class="four columns bottom">
+                    <ul id="footer">
+                        <li class="footer"><a id="footer" href="WebSocket.html">WebSocket</a></li>
+                        <li class="footer"><a id="footer" href="table.html">Сервисы с API</a></li>
+                        <li class="footer"><a id="footer" href="video.html">Видео про API</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>

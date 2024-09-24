@@ -1,0 +1,408 @@
+body {
+    width: 100%;
+    background-color: #c6e7e5;
+    background-image: url("../img/texture2.png");
+    background-repeat: repeat-y;
+
+    background-position: right;
+
+
+    background-size: 18%;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.container {
+    margin: 0;
+    margin-left: 5%;
+    padding: 0;
+
+}
+
+
+.row {
+    padding: 0;
+}
+
+
+div#footer {
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding: 30px;
+    padding-left: 10%;
+    padding-right: 0;
+}
+
+footer {
+    background-color: #333;
+    height: 100%;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.bottom {
+    padding-top: 1%;
+}
+
+.footer {
+    color: #f9f9f9;
+}
+
+a#footer {
+    color: #f9f9f9;
+}
+
+
+/* Стили для сайдбара */
+.sidebar {
+    max-width: 250px;
+    z-index: 1;
+    background-color: #FDBF50;
+    font-family: 'overdozesans';
+    padding: 20px;
+    margin-top: 85px;
+    margin-left: 0;
+    margin-bottom: 40px;
+    font-size: 28px;
+    border: solid;
+    border-width: 2px 4px;
+    border-radius: 40px 20px;
+
+}
+
+
+
+/* Стили для заголовков и списка в сайдбаре */
+.sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    /* list-style-type: none; */
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 3px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для основного контента */
+.main-content {
+    /* Отступ для основного контента (ширина сайдбара + отступ) */
+    padding: 30px;
+    margin-top: 80px;
+    z-index: 0;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: #F4F4F8;
+    border-radius: 20px;
+    border: 2px solid black;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF724C;
+    /* Цвет фона */
+    height: 70px;
+    /* Высота заголовка */
+    width: 100%;
+    overflow-y: auto;
+    padding: 5px 50px;
+    padding-right: 4%;
+    position: absolute;
+    /* Зафиксируем верхнее меню */
+    top: 0;
+    /* Расположим его в верхней части страницы */
+    left: 0;
+    /* Левое положение */
+    z-index: 2;
+    /* Убедиться, что он выше других элементов */
+    border-radius: 0 0 20px 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+
+}
+
+a#index {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: 1px 1px 5px black;
+    padding-right: 9px;
+}
+
+.nav-icon:hover {
+    color: #FDBF50;
+}
+
+#dropdownBtn{
+    position: absolute;
+    /* top: 15px;
+    left: 15px; */
+    margin: 15px;
+    border: 0;
+    font-size: 30px;
+    color: white;
+}
+
+
+
+
+h1 {
+    font-family: 'Everlasting';
+    font-size: 37px;
+    padding: 0 auto;
+    /* padding-left: 40px; */
+    /* white-space: nowrap; */
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    margin: 0;
+
+}
+
+h2 {
+    font-family: 'Vollda-Bold';
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+h4 {
+    font-size: 25px;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+div {
+    font-family: 'Unageo-Regular';
+    font-size: 20px;
+}
+
+a#but {
+    background-color: #FDBF50;
+    border-color: #FDBF50;
+    color: #000;
+}
+
+a#but:hover {
+    background-color: #dba953;
+    border-color: #dba953;
+}
+
+div#button {
+    margin-top: 40px;
+
+}
+
+p {
+    font-family: 'Unageo-Regular-Italic';
+    padding-top: 10px;
+}
+
+.button-primary {
+    border: solid;
+    border-width: 1px 3px;
+    border-radius: 10px 20px;
+    font-family: 'overdozesans';
+    font-size: 20px;
+}
+
+img {
+    width: 90%;
+    margin: 20px;
+    box-shadow: 3px 3px 1px 2px rgba(1, 1, 37, 0.233);
+}
+
+.info {
+    display: none;
+    /* Скрываем поясняющий блок по умолчанию */
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.toggle {
+    cursor: pointer;
+    /* Указатель при наведении */
+    color: blue;
+    text-decoration: underline;
+}
+
+span {
+    text-decoration: underline;
+}
+
+table {
+    min-width: 400px;
+    border-collapse: collapse;
+}
+
+#table{
+    overflow-x: auto; /* Включаем горизонтальную прокрутку */
+    -webkit-overflow-scrolling: touch; /* Ускорение прокрутки на мобильных устройствах */
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+@font-face {
+    font-family: "DudkaRegular";
+    src: url("../fonts/DudkaRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "overdozesans";
+    src: url("../fonts/overdozesans.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Vollda-Bold";
+    src: url(../fonts/Vollda-Bold.otf);
+}
+
+@font-face {
+    font-family: 'Involve-Regular';
+    src: url(../fonts/Involve-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Unageo-Regular';
+    src: url(../fonts/Unageo-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Everlasting';
+    src: url(../fonts/Everlasting.ttf);
+}
+
+@font-face {
+    font-family: 'Unageo-Regular-Italic';
+    src: url(../fonts/Unageo-Regular-Italic.ttf);
+}
+
+@media (max-width: 900px) {
+    .container {
+        margin: 0;
+    }
+
+    .sidebar {
+        width: 320%;
+        top: 45px;
+        height: 550px;
+    }
+
+    body {
+        background-image: none;
+    }
+
+    header {
+        flex-direction: column;
+        /* Размещаем элементы вертикально на маленьких экранах */
+        align-items: flex-start;
+    }
+
+    .nav {
+        justify-content: flex-start;
+        /* Левое выравнивание навигации */
+    }
+
+}
+
+
+
+@media (max-width: 1200px) {
+    h1 {
+        display: none;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .nav {
+        margin: auto auto;
+
+    }
+
+    header {
+        padding: 0;
+    }
+}
+
+@media (min-width: 901px) {
+    #dropdownBtn{
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+        position: absolute;
+        margin-top: 45px;
+        margin-top: 0px;
+        left: 10px;
+        font-size: 24px;
+        min-height: 550px;
+        min-width: 300px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    h2 {
+        display: block;
+    }
+
+    .main-content {
+        min-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #button {
+        text-align: center;
+    }
+
+
+    .content {
+        min-width: 100%;
+    }
+
+    ;
+}

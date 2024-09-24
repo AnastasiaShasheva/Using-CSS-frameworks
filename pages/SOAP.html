@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>SOAP API</title>
+</head>
+
+<body>
+    <header>
+        <button id="dropdownBtn"><i class="fa-solid fa-bars"></i></button>
+        <h1 id='name'><a href="index.html" id="index">Использование API сервисов при разработке сайтов</a></h1>
+        <nav class="nav">
+            <a href="https://vk.com/shnastya_0" class="nav-icon" target="_blank"><i class="fa-brands fa-vk"></i></a>
+            <a href="https://github.com/AnastasiaShasheva" class="nav-icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="three columns sidebar">
+                <h2>Навигация</h2>
+                <ul>
+                    <li><a href="index.html">Что такое API?</a></li>
+                        <li><a href="interface.html">Интерфейс?</a></li>
+                        <li><a href="types.html">Типы API</a></li>
+                        <li><a href="REST.html">REST API</a></li>
+                        <li><a href="SOAP.html">SOAP API</a></li>
+                        <li><a href="GraphQL.html">GraphQL</a></li>
+                        <li><a href="WebSocket.html">WebSocket</a></li>
+                        <li><a href="table.html">Сервисы с API</a></li>
+                        <li><a href="video.html">Видео про API</a></li>
+                </ul>
+            </div>
+
+            <div class="nine columns main-content">
+                <h2>SOAP API</h2>
+                <div>
+                    SOAP — это протокол, по которому веб-сервисы взаимодействуют друг с другом или с клиентами. Название
+                    происходит от сокращения Simple Object Access Protocol («простой протокол доступа к объектам»). SOAP
+                    API — это веб-сервис, использующий протокол SOAP для обмена сообщениями между серверами и клиентами.
+                    При этом сообщения должны быть написаны на языке XML в соответствии со строгими стандартами, иначе
+                    сервер вернет ошибку.
+                </div>
+
+                <img src="../img/soap.png" alt="">
+
+                <h4>Особенности SOAP API</h4>
+
+                <div>SOAP может использоваться с протоколами SMTP, FTP, HTTP, HTTPS. Чаще всего — с HTTP как с наиболее
+                    универсальным: его поддерживают все браузеры и серверы. Корректное SOAP-сообщение состоит из
+                    нескольких структурных элементов: <a href="#Envelope">Envelope</a>, <a href="#Header">Header</a>, <a
+                        href="#Body">Body</a> и <a href="#Fault">Fault</a>.</div>
+
+                <h4 id="Envelope">Envelope («конверт»).</h4>
+                <div>
+                    Это корневой элемент. Определяет XML-документ как сообщение SOAP с помощью пространства имен
+                    xmlns_soap=»http://www.w3.org/2003/05/soap-envelope/». Если в определении будет указан другой адрес,
+                    сервер вернет ошибку.
+                </div>
+
+                <h4 id='Header'>Header («заголовок»).</h4>
+                <div>
+                    Включает в себя атрибуты сообщения, связанные с конкретным приложением (аутентификация, проведение
+                    платежей и так далее). В заголовке могут использоваться три атрибута, которые указывают, как
+                    принимающая сторона должна обрабатывать сообщение, — mustUnderstand, actor и encodingStyle. Значение
+                    mustUnderstand — 1 или 0 — говорит принимающему приложению о том, следует ли распознавать заголовок
+                    в обязательном или опциональном порядке. Атрибут actor задает конкретную конечную точку для
+                    сообщения. Атрибут encodingStyle устанавливает специфическую кодировку для элемента. По умолчанию
+                    SOAP-сообщение не имеет определенной кодировки.
+                </div>
+
+                <h4 id="Body">Body («тело»).</h4>
+                <div>
+                    Сообщение, которое передает веб-приложение. Может содержать запрос к серверу или ответ от него.
+                    Пример сообщения, которое запрашивает стоимость ноутбука в онлайн-магазине:
+                    <p>
+                        &lt;?xml version="1.0"?&gt; &lt;soap:Envelope
+                        xmlns_soap="http://www.w3.org/2003/05/soap-envelope/"
+                        soap_encodingStyle="http://www.w3.org/2003/05/soap-encoding"&gt; &lt;soap:Body&gt;
+                        &lt;m:GetPrice xmlns_m="https://online-shop.ru/prices"&gt; &lt;m:Item&gt;Dell Vostro
+                        3515-5371&lt;/m:Item&gt; &lt;/m:GetPrice&gt; &lt;/soap:Body&gt; &lt;/soap:Envelope&gt;
+                    </p>
+                    Пример ответа сервера онлайн-магазина:
+                    <p>
+                        >&lt;?xml version="1.0"?&gt; &lt;soap:Envelope
+                        xmlns_soap="http://www.w3.org/2003/05/soap-envelope/"
+                        soap_encodingStyle="http://www.w3.org/2003/05/soap-encoding"&gt; &lt;soap:Body&gt;
+                        &lt;m:GetPriceResponse xmlns_m="https://online-shop.ru/prices"&gt;
+                        &lt;m:Price&gt;37299&lt;/m:Price&gt; &lt;/m:GetPriceResponse&gt; &lt;/soap:Body&gt;
+                        &lt;/soap:Envelope&gt;
+                    </p>
+                </div>
+
+                <h4 id="Fault">Fault («ошибка»).</h4>
+                <div>
+                    Опциональный элемент. Передает уведомление об ошибках, если они возникли в ходе обработки сообщения.
+                    Может содержать вложенные элементы, которые проясняют причину возникновения ошибки:
+                </div>
+
+                <ul>
+                    <li>faultcode — код неполадки;</li>
+                    <li>faultstring — «человекопонятное» описание проблемы;</li>
+                    <li>faultactor — информация о программном компоненте, который вызвал ошибку;</li>
+                    <li>detail — дополнительные сведения о месте возникновения неполадки.</li>
+                </ul>
+
+                <h4>В каких случаях используют SOAP</h4>
+                <div>
+                    <div>
+                        Асинхронная обработка и последующий вызов. Стандарт SOAP 1.2 обеспечивает клиенту
+                        гарантированный уровень надежности и безопасности.
+                    </div>
+                    <div>
+                        Формальное средство коммуникации. Если клиент и сервер имеют соглашение о формате обмена, то
+                        SOAP 1.2 предоставляет жесткие спецификации для такого типа взаимодействия. Пример — сайт
+                        онлайн-покупок, на котором пользователи добавляют товары в корзину перед оплатой. Предположим,
+                        что есть веб-служба, которая выполняет окончательный платеж. Может быть достигнуто соглашение,
+                        что веб-сервис будет принимать только название товара, цену за единицу и количество. Если
+                        сценарий существует, лучше использовать протокол SOAP.
+                    </div>
+                    <div>
+                        Операции с состоянием. Если приложение требует, чтобы состояние сохранялось от одного запроса к
+                        другому, то стандарт SOAP 1.2 предоставляет структуру для поддержки таких требований.
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: center;" id="button">
+                    <div>
+                        <a class="button button-primary" href="REST.html" id="but">&lt; Предыдущая</a>
+                        <a class="button button-primary" href="GraphQL.html" id="but">Следующая &gt;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" id="footer">
+            <div class="row">
+                <div class="four columns bottom">
+                    <ul>
+                        <li class="footer"><a id="footer" href="index.html">Что такое API?</a></li>
+                        <li class="footer"><a id="footer" href="interface.html">При чем тут интерфейс?</a></li>
+                        <li class="footer"><a id="footer" href="types.html">Типы API</a></li>
+                    </ul>
+                </div>
+                <div class="four columns bottom">
+                    <ul>
+                        <li class="footer"><a id="footer" href="REST.html">REST API</a></li>
+                        <li class="footer"><a id="footer" href="SOAP.html">SOAP API</a></li>
+                        <li class="footer"><a id="footer" href="GraphQL.html">GraphQL</a></li>
+                    </ul>
+                </div>
+                <div class="four columns bottom">
+                    <ul id="footer">
+                        <li class="footer"><a id="footer" href="WebSocket.html">WebSocket</a></li>
+                        <li class="footer"><a id="footer" href="table.html">Сервисы с API</a></li>
+                        <li class="footer"><a id="footer" href="video.html">Видео про API</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>

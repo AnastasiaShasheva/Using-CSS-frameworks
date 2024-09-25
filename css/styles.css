@@ -207,6 +207,7 @@ h4 {
 div {
     font-family: 'Unageo-Regular';
     font-size: 20px;
+    overflow-wrap:break-word;
 }
 
 a#but {
@@ -228,6 +229,7 @@ div#button {
 p {
     font-family: 'Unageo-Regular-Italic';
     padding-top: 10px;
+    overflow-wrap:break-word;
 }
 
 .button-primary {

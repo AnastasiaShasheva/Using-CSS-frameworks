@@ -327,7 +327,7 @@ tr:hover {
     .sidebar {
         width: 320%;
         top: 45px;
-        height: 550px;
+        height: 490px;
     }
 
     body {
@@ -382,7 +382,7 @@ tr:hover {
         margin-top: 0px;
         left: 10px;
         font-size: 24px;
-        min-height: 550px;
+        min-height: 490px;
         min-width: 300px;
         border-radius: 0 0 20px 20px;
     }
